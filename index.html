@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Vision Board</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="bg-orbs">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<header>
+  <h1 class="title">✨ Vision Board</h1>
+  <div class="dashboard">
+    <div class="stat"><span id="totalGoals">0</span><p>Goals</p></div>
+    <div class="stat"><span id="completedGoals">0</span><p>Completed</p></div>
+    <div class="stat"><span id="progressPercent">0%</span><p>Progress</p></div>
+    <div class="stat quote" id="quoteBox">“Dream big, act bigger.”</div>
+  </div>
+
+  <div class="controls">
+    <input id="search" placeholder="Search goals..."/>
+    <button id="addBtn">+ New Goal</button>
+  </div>
+</header>
+
+<main class="board">
+  <div class="column" data-status="dreams"><h2>Dreams</h2></div>
+  <div class="column" data-status="progress"><h2>In Progress</h2></div>
+  <div class="column" data-status="near"><h2>Near Completion</h2></div>
+  <div class="column" data-status="done"><h2>Achieved</h2></div>
+</main>
+
+<!-- MODAL -->
+<div class="modal hidden" id="modal">
+  <div class="modal-content">
+    <h2>Create Goal</h2>
+
+    <input id="title" placeholder="Title"/>
+    <textarea id="desc" placeholder="Description"></textarea>
+
+    <div class="row">
+      <select id="category">
+        <option>Dreams</option>
+        <option>Career</option>
+        <option>Health</option>
+        <option>Finance</option>
+      </select>
+
+      <input id="date" type="date"/>
+    </div>
+
+    <div class="row">
+      <select id="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <input id="emoji" placeholder="Emoji"/>
+    </div>
+
+    <input id="image" placeholder="Image URL (optional)"/>
+    <input id="progress" type="number" placeholder="Progress %" min="0" max="100"/>
+
+    <div class="modal-actions">
+      <button id="save">Save</button>
+      <button id="close">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="confetti"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
